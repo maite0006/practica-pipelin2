@@ -39,7 +39,7 @@ jobs:
 
       - name: Calcular versión
         id: version
-        run: echo "version=1.0.${{ github.run_number }}" >> $GITHUB_ENV
+        run: echo "version=1.0.${{ github.run_number }}" >> $GITHUB_OUTPUT
 
       - name: Build imagen
         run: docker build -t $IMAGE:latest .
