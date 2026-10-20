@@ -3,6 +3,8 @@ name: CI Ronda 2
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+
 
 env:
   IMAGE: saludo-app
