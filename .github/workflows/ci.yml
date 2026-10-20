@@ -55,12 +55,9 @@ jobs:
           docker run --rm $IMAGE:latest > reporte/salida.txt
           echo "Run número: ${{ github.run_number }}" >> reporte/salida.txt
 
-      - name: Subir reporte
+      - name: reporte
         uses: actions/upload-artifact@v4
-        with:
-          name: reporte-build
-          path: reporte/
-
+        
   report:
     name: Reporte final
     runs-on: ubuntu-latest
@@ -83,7 +80,7 @@ jobs:
       - name: Descargar reporte
         uses: actions/download-artifact@v4
         with:
-          name: reporte
+          name: reporte build
           path: reporte/
 
       - name: Mostrar reporte
